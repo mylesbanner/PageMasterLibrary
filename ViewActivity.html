@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Aeon - Activity Requests</title>
+    <#INCLUDE filename="include_head.html">
+</head>
+
+<body>
+
+    <#INCLUDE filename="include_header.html">
+    
+    <#INCLUDE filename="include_menu.html">
+    <div id="content" class="container" role="heading" aria-label="Content">
+
+        <#INCLUDE filename="ActivityInformation.html">
+
+        <h3 class="reqHeader">Activity Requests</h3>
+
+        <#DATAREPEATER name="ViewActivityRequests" TemplateFile="templates/DataRow_DefaultRequest.html" noDataAction="You have no activity requests" orderby="TransactionNumber DESC">
+
+        <span>
+            <a class="btn btn-primary btn-md" href="<#ACTION action='10' form='92'>&Value=<#PARAM name='Value'>">Download Excel workbook with all Activity details</a>
+            <a class="btn btn-primary btn-md" href="<#ACTION action='10' form='93'>&Value=<#PARAM name='Value'>">Download iCalendar file</a>
+        </span>
+
+      
+        <#INCLUDE filename="include_footer.html">
+       
+    </div>
+</body>
+
+</html>

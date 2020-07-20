@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Aeon - Transaction
+        <#PARAM name="TransactionNumber">
+    </title>
+    <#INCLUDE filename="include_head.html">
+</head>
+
+<body>
+    <#INCLUDE filename="include_header.html">
+
+    <#INCLUDE filename="include_menu.html">
+
+    <div class="container" id="content" role="heading" aria-label="Content">
+        <#INCLUDE filename="include_TransactionMenu.html">
+        <#INCLUDE type="DetailedDocTypeInformation">
+        <#INCLUDE filename="include_ResearcherTagsUpdate.html">
+
+        <h3 class="header-detailed">Notes</h3>
+        <#DATAREPEATER name="NotesInformation" TemplateFile="templates/DataRow_DefaultNote.html" noDataAction="You have no notes">
+
+            <h3 class="header-detailed">Tracking</h3>
+            <div class="table">
+                <#TABLE name="TrackingInformation" noDataAction="ShowMessageRow" noDataMessage="You have no tracking information" column="ChangedDate:Changed Date" column="ChangedTo:Status" column="ChangedBy:Changed By">
+            </div>
+
+            <#INCLUDE filename="include_footer.html">
+    </div>
+
+</body>
+
+</html>

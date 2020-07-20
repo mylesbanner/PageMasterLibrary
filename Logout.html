@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>Aeon Logout</title>
+	<#INCLUDE filename="include_head.html">
+	<!-- Bootstrap CSS -->
+</head>
+
+<body>
+	<script language="javascript" type="text/javascript">
+		//This command will wait 5 seconds (5000 milliseconds) and then load the page defined in the WebLogoutURL or RemoteAuthWebLogoutURL customization key, as appropriate.
+		window.setTimeout('window.location.replace("<#PARAM name='LogoutUrl'>");', 5000); 
+	</script>
+		
+	<#INCLUDE filename="include_header.html">
+	
+	<div class="alerts-bar">
+        <div class="container" id="webAlerts"></div>
+    </div>
+
+	<div class="container">
+		<div id="status"><#STATUS></div>
+		<div id="content" role="heading" aria-label="Content">
+
+			<div class="logout-message">If you are not redirected within five seconds,
+				<a href="<#PARAM name='LogoutUrl'>">click here.</a>
+			</div>
+
+			<#INCLUDE filename="include_footer.html">
+			
+		</div>
+	</div>
+</body>
+
+</html>

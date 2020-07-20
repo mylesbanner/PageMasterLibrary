@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Aeon Main Menu</title>
+    <#INCLUDE filename="include_head.html">
+
+    <link href="<#ACTION action='2' type='40' value='RSSID' valueType='lookup' absolutePath='true' includeSessionID='false'>" rel='alternate' type='application/rss+xml' title='Aeon Alerts'>
+</head>
+
+<body>
+
+    <#INCLUDE filename="include_header.html">
+
+    <#INCLUDE filename="include_menu.html">
+
+    <div id="content" class="container" role="heading" aria-label="Content">
+       <#TAGCLOUD>
+        <h2>Outstanding Requests</h2>
+        <#DATAREPEATER name="ViewOutstandingRequests" TemplateFile="templates/DataRow_DefaultRequest.html" noDataAction="You have no outstanding requests" orderby="TransactionNumber DESC">
+
+
+        <#INCLUDE filename="include_footer.html">
+
+    </div>
+
+</body>
+
+</html>
